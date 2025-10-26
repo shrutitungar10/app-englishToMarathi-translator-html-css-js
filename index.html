@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>English to Marathi Translator</title>
+  <style>
+    body {
+      background: #f5e7a9;
+      font-family: Arial;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .box {
+      background: rgb(246, 181, 91);
+      width: 380px;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      height: auto;
+      
+    }
+    textarea, button {
+      width: 350px;
+      padding: 10px;
+      margin-top: 8px;
+      border-radius: 8px;
+      border: 1px solid #888;
+      font-size: 15px;
+    }
+    button {
+      background: #d35400;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #output {
+      background: #fff3e0;
+      margin-top: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      min-height: 45px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>English → Marathi</h2>
+
+  <textarea id="inp" placeholder="Type English word or sentence..."></textarea>
+  <button onclick="trans()">Translate</button>
+
+  <div id="output"></div>
+</div>
+
+<script>
+  const words = {
+    "hello": "नमस्कार",
+    "thank you": "धन्यवाद",
+    "what is your name": "तुमचे नाव काय आहे?",
+    "how are you": "तू कसा/कशी आहेस?",
+    "i am fine": "मी ठीक आहे",
+    "please": "कृपया",
+    "yes": "हो",
+    "no": "नाही",
+    "water": "पाणी",
+    "home": "घर",
+    "hi": "हाय",
+    "good morning": "शुभ सकाळ",
+    "good night": "शुभ रात्री",
+    "thank you": "धन्यवाद",
+    "sorry": "माफ करा",
+    "what": "काय",
+    "who": "कोण",
+    "where": "कुठे",
+    "when": "कधी",
+    "how": "कसे",
+    "i": "मी",
+    "you": "तू / तुम्ही",
+    "we": "आपण / आम्ही",
+    "they": "ते / त्या",
+    "eat": "खा",
+    "drink": "प्या",
+    "come": "ये",
+   
+  };
+
+  function trans(){
+    let text = document.getElementById("inp").value.trim().toLowerCase();
+    document.getElementById("output").innerHTML =
+      words[text] ? words[text] : "Translation not available!";
+  }
+</script>
+
+</body>
+</html>
